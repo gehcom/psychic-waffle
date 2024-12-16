@@ -9,21 +9,28 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout the repository
       - name: Checkout the repository
         uses: actions/checkout@v3
 
+      # 2. Setup Node.js (v16 or v18 for Nuxt 2 compatibility)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 16
 
+      # 3. Install dependencies and generate static files
       - name: Install dependencies and build
         run: |
           npm ci
-          npm run build
+          npm run generate
 
+      # 4. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
+          publish_branch: gh-pages
+          keep_files: false
+          enable_jekyll: false
