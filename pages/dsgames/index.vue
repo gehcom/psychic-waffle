@@ -270,7 +270,7 @@ export default {
   },
   async fetch() {
     const gamesResponse = await this.$axios.$get(
-      `https://ghosteshop.com/dbapi-ds.php`
+      `https://ghosteshop.com/ghosteshop-ds.json`
     )
     this.games = gamesResponse
     this.headers = [
