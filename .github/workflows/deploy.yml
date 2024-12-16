@@ -25,7 +25,12 @@ jobs:
           npm ci
           npm run generate
 
-      # 4. Deploy to GitHub Pages
+      # 4. Move public/ folder to the root of dist/
+      - name: Move public/ contents to root of dist
+        run: |
+          cp -R public/* dist/
+
+      # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
