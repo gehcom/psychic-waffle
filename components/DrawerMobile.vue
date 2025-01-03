@@ -64,7 +64,9 @@
         <v-list-item
           v-for="gamet in gamestypes"
           :key="gamet.name"
-          :to="localePath('/' + gamet.page)"
+          :to="!gamet.page.startsWith('http') ? localePath('/' + gamet.page) : null"
+          :href="gamet.page.startsWith('http') ? gamet.page : null"
+          :target="gamet.page.startsWith('http') ? '_blank' : null"
           link
           style="padding-left: 20px"
         >
@@ -109,6 +111,10 @@ export default {
           name: 'WiiU',
           page: 'wiiu',
         },
+        {
+          name: 'Switch',
+          page: 'https://nx.ghostland.at',
+        },
       ],
     }
   },
@@ -125,7 +131,7 @@ export default {
 }
 </script>
 
-<style scopped>
+<style scoped>
 .v-btn {
   margin-left: 10px;
 }

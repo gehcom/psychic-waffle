@@ -74,7 +74,9 @@
         <v-list-item
           v-for="gamet in gamestypes"
           :key="gamet.name"
-          :to="localePath('/' + gamet.page)"
+          :to="!gamet.page.startsWith('http') ? localePath('/' + gamet.page) : null"
+          :href="gamet.page.startsWith('http') ? gamet.page : null"
+          :target="gamet.page.startsWith('http') ? '_blank' : null"
         >
           <v-list-item-title>{{ gamet.name }}</v-list-item-title>
         </v-list-item>
@@ -94,7 +96,7 @@
         color="green"
         nuxt
         target="_blank"
-        href="https://buymeacoffee.com/ghostland"
+        href="https://boosty.to/ghostland"
         text
         ><v-icon>mdi-currency-usd</v-icon> {{ $t('header.donate') }}</v-btn
       >
@@ -155,13 +157,17 @@ export default {
           name: 'WiiU',
           page: 'wiiu',
         },
+        {
+          name: 'Switch',
+          page: 'https://nx.ghostland.at',
+        },
       ],
     }
   },
 }
 </script>
 
-<style scopped>
+<style scoped>
 .v-btn {
   margin-left: 10px;
 }
