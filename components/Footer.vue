@@ -10,9 +10,9 @@
         <v-btn class="mx-4 white--text" href="https://social.ghostland.at" icon target="_blank" rel="noopener noreferrer">
           <v-icon size="24px"> mdi-account-group </v-icon>
         </v-btn>
-        <v-btn class="mx-4 white--text" href="https://github.com/ghost-land" icon target="_blank" rel="noopener noreferrer">
+        <!-- <v-btn class="mx-4 white--text" href="https://github.com/ghost-land" icon target="_blank" rel="noopener noreferrer">
           <v-icon size="24px"> mdi-github </v-icon>
-        </v-btn>
+        </v-btn> -->
         <!-- <v-btn class="mx-4 white--text" href="https://ghosteshop.com/feed/news.xml" icon target="_blank" rel="noopener noreferrer">
           <v-icon size="24px"> mdi-rss </v-icon>
         </v-btn> -->
