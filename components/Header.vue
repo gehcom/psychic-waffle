@@ -96,7 +96,7 @@
         color="green"
         nuxt
         target="_blank"
-        href="https://boosty.to/ghostland"
+        href="https://donate.ghostland.at"
         text
         ><v-icon>mdi-currency-usd</v-icon> {{ $t('header.donate') }}</v-btn
       >
